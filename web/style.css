@@ -1,0 +1,28 @@
+
+.bandeau {
+    min-height: 150px;
+    background-color:#343A40;
+}
+
+a {
+  color: white;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+a:visited{
+  text-decoration: none;
+
+}
+a:active{
+  text-decoration: none;
+}
+
+.image{
+  height: 640px;
+  background-image: url("accueil.jpg");
+  background-repeat: round;
+}

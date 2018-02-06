@@ -1,0 +1,3 @@
+resa_homepage:
+    path:     /
+    defaults: { _controller: ResaBundle:Default:index }

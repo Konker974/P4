@@ -15,7 +15,7 @@ class ComposerStaticInit69cf6091f36802771bef3e1ce6bc7015
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
-        '719971e375036615a0685b6fb054583d' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
+        'df6c78100753fff330096567e13b525d' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -43,6 +43,10 @@ class ComposerStaticInit69cf6091f36802771bef3e1ce6bc7015
             'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
+        ),
+        'R' => 
+        array (
+            'ResaBundle\\' => 11,
         ),
         'P' => 
         array (
@@ -158,6 +162,10 @@ class ComposerStaticInit69cf6091f36802771bef3e1ce6bc7015
         'Sensio\\Bundle\\DistributionBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/sensio/distribution-bundle',
+        ),
+        'ResaBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/ResaBundle',
         ),
         'Psr\\SimpleCache\\' => 
         array (
