@@ -163,46 +163,4 @@ class Reservation
     {
         return $this->isPaid;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->billets = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add billet
-     *
-     * @param \ResaBundle\Entity\Billet $billet
-     *
-     * @return Reservation
-     */
-    public function addBillet(\ResaBundle\Entity\Billet $billet)
-    {
-        $this->billets[] = $billet;
-        $billet->setReservation($this);
-
-        return $this;
-    }
-
-    /**
-     * Remove billet
-     *
-     * @param \ResaBundle\Entity\Billet $billet
-     */
-    public function removeBillet(\ResaBundle\Entity\Billet $billet)
-    {
-        $this->billets->removeElement($billet);
-    }
-
-    /**
-     * Get billets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getBillets()
-    {
-        return $this->billets;
-    }
 }

@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Billet
 {
     /**
-   * @ORM\ManyToOne(targetEntity="ResaBundle\Entity\Reservation")
+   * @ORM\ManyToOne(targetEntity="ResaBundle\Entity\Reservation", inversedBy="billets")
    * @ORM\JoinColumn(nullable=false)
    */
     private $reservation;
@@ -70,12 +70,6 @@ class Billet
      */
     private $numSerie;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ResaId", type="integer")
-     */
-    private $resaId;
 
     /**
      * @var string
@@ -261,29 +255,7 @@ class Billet
         return $this->numSerie;
     }
 
-    /**
-     * Set resaId
-     *
-     * @param integer $resaId
-     *
-     * @return Billet
-     */
-    public function setResaId($resaId)
-    {
-        $this->resaId = $resaId;
 
-        return $this;
-    }
-
-    /**
-     * Get resaId
-     *
-     * @return integer
-     */
-    public function getResaId()
-    {
-        return $this->resaId;
-    }
 
     /**
      * Set tarif
