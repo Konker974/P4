@@ -5,6 +5,9 @@ namespace ResaBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use ResaBundle\Form\BilletType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 
 class ReservationType extends AbstractType
 {
@@ -13,9 +16,10 @@ class ReservationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('email')->add('lastModif')->add('isPaid');
+        $builder->add('date')->add('email')
+        ->add('billets', CollectionType::class, array('entry_type'=>BilletType::class, 'allow_add'=>true,'allow_delete'=>true));
     }
-    
+
     /**
      * {@inheritdoc}
      */

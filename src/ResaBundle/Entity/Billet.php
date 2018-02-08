@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Billet
 {
     /**
+   * @ORM\ManyToOne(targetEntity="ResaBundle\Entity\Reservation")
+   * @ORM\JoinColumn(nullable=false)
+   */
+    private $reservation;
+
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -91,6 +98,14 @@ class Billet
      */
     private $prix;
 
+
+    public function getReservation(){
+      return $this->reservation;
+    }
+    public function setReservation(Reservation $reservation){
+      $this->reservation=$reservation;
+      return $this;
+    }
 
     /**
      * Get id
