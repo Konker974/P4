@@ -1,3 +1,7 @@
 resa_homepage:
     path:     /
     defaults: { _controller: ResaBundle:Default:index }
+
+resa_formpage:
+    path:     /resa
+    defaults: { _controller: ResaBundle:Resa:form }
