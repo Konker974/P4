@@ -15,11 +15,11 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0f08aac6f3587aaff2d17751efbf40616f15d32815e06ba972fe286490fcbcd4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0f08aac6f3587aaff2d17751efbf40616f15d32815e06ba972fe286490fcbcd4->enter($__internal_0f08aac6f3587aaff2d17751efbf40616f15d32815e06ba972fe286490fcbcd4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ResaBundle:Default:index.html.twig"));
+        $__internal_14856f4c523f31009ec2f72a62b8a6f94c0910b763fb4f8b196e794f6bddf81b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_14856f4c523f31009ec2f72a62b8a6f94c0910b763fb4f8b196e794f6bddf81b->enter($__internal_14856f4c523f31009ec2f72a62b8a6f94c0910b763fb4f8b196e794f6bddf81b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ResaBundle:Default:index.html.twig"));
 
-        $__internal_2257b69831e50fb912c70cef461cf2aee3445a401657186b99f61aba2d21a42e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2257b69831e50fb912c70cef461cf2aee3445a401657186b99f61aba2d21a42e->enter($__internal_2257b69831e50fb912c70cef461cf2aee3445a401657186b99f61aba2d21a42e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ResaBundle:Default:index.html.twig"));
+        $__internal_f3e8018200f9804afdda206c8412ae04ca8c73451179040981d416cc8cac1146 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f3e8018200f9804afdda206c8412ae04ca8c73451179040981d416cc8cac1146->enter($__internal_f3e8018200f9804afdda206c8412ae04ca8c73451179040981d416cc8cac1146_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ResaBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!doctype html>
@@ -27,13 +27,16 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
     <head>
         <meta charset=\"UTF-8\" />
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\" integrity=\"sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb\" crossorigin=\"anonymous\"/>
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"..\\style.css\"/>
 
 
     </head>
     <body>
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"#\">Louvre</a>
+        <a class=\"navbar-brand\" href=\"";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("resa_homepage");
+        echo "\">Louvre</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -43,7 +46,10 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
               <a class=\"nav-link\" href=\"#\">Infos pratiques</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"#\">Réserver une visite</a>
+              <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("resa_formpage");
+        echo "\">Réserver une visite</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"#\">Pricing</a>
@@ -55,7 +61,7 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
             <header>
               <div class=\"row bandeau\">
                 <div class=\"col text-center\">
-                  <h1 class=\"display-1\"><a href=\"#\" class=\"titre\">Musée du Louvre</h1></a>
+                  <h1 class=\"display-1\">Musée du Louvre</h1>
                 </div>
               </div>
             </header>
@@ -75,10 +81,10 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
 </html>
 ";
         
-        $__internal_0f08aac6f3587aaff2d17751efbf40616f15d32815e06ba972fe286490fcbcd4->leave($__internal_0f08aac6f3587aaff2d17751efbf40616f15d32815e06ba972fe286490fcbcd4_prof);
+        $__internal_14856f4c523f31009ec2f72a62b8a6f94c0910b763fb4f8b196e794f6bddf81b->leave($__internal_14856f4c523f31009ec2f72a62b8a6f94c0910b763fb4f8b196e794f6bddf81b_prof);
 
         
-        $__internal_2257b69831e50fb912c70cef461cf2aee3445a401657186b99f61aba2d21a42e->leave($__internal_2257b69831e50fb912c70cef461cf2aee3445a401657186b99f61aba2d21a42e_prof);
+        $__internal_f3e8018200f9804afdda206c8412ae04ca8c73451179040981d416cc8cac1146->leave($__internal_f3e8018200f9804afdda206c8412ae04ca8c73451179040981d416cc8cac1146_prof);
 
     }
 
@@ -87,9 +93,14 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
         return "ResaBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  25 => 1,);
+        return array (  51 => 22,  38 => 12,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -107,13 +118,13 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
     <head>
         <meta charset=\"UTF-8\" />
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css\" integrity=\"sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb\" crossorigin=\"anonymous\"/>
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"..\\style.css\"/>
 
 
     </head>
     <body>
       <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-        <a class=\"navbar-brand\" href=\"#\">Louvre</a>
+        <a class=\"navbar-brand\" href=\"{{path('resa_homepage')}}\">Louvre</a>
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -123,7 +134,7 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
               <a class=\"nav-link\" href=\"#\">Infos pratiques</a>
             </li>
             <li class=\"nav-item\">
-              <a class=\"nav-link\" href=\"#\">Réserver une visite</a>
+              <a class=\"nav-link\" href=\"{{path('resa_formpage')}}\">Réserver une visite</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link\" href=\"#\">Pricing</a>
@@ -135,7 +146,7 @@ class __TwigTemplate_3c101615195c126d58f810f5f86ca8a03abb82478e4248bda8f9124b3a4
             <header>
               <div class=\"row bandeau\">
                 <div class=\"col text-center\">
-                  <h1 class=\"display-1\"><a href=\"#\" class=\"titre\">Musée du Louvre</h1></a>
+                  <h1 class=\"display-1\">Musée du Louvre</h1>
                 </div>
               </div>
             </header>

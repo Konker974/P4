@@ -7,6 +7,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use ResaBundle\Form\BilletType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 
 class ReservationType extends AbstractType
@@ -16,8 +19,10 @@ class ReservationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('email')
+        $builder->add('email', EmailType::class)
+        ->add('save',      SubmitType::class)
         ->add('billets', CollectionType::class, array('entry_type'=>BilletType::class, 'allow_add'=>true,'allow_delete'=>true));
+
     }
 
     /**

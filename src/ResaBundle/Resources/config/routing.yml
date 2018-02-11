@@ -5,3 +5,7 @@ resa_homepage:
 resa_formpage:
     path:     /resa
     defaults: { _controller: ResaBundle:Resa:form }
+
+resa_commandpage:
+    path:     /commande
+    defaults: { _controller: ResaBundle:Commande:commande }

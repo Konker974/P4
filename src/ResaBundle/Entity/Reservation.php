@@ -50,7 +50,7 @@ class Reservation
     private $isPaid;
 
     /**
-    * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation")
+    * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation", cascade={"persist"})
     */
     private $billets;
 

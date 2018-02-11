@@ -3,6 +3,7 @@
 namespace ResaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Billet
@@ -60,6 +61,7 @@ class Billet
      * @var \DateTime
      *
      * @ORM\Column(name="DateVisite", type="datetime")
+     * @Assert\GreaterThanOrEqual("today")
      */
     private $dateVisite;
 
