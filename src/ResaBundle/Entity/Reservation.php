@@ -50,6 +50,13 @@ class Reservation
     private $isPaid;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="PrixTotal", type="integer")
+     */
+    private $prixTotal;
+
+    /**
     * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation", cascade={"persist"})
     */
     private $billets;
@@ -67,6 +74,31 @@ class Reservation
     {
         return $this->id;
     }
+
+    /**
+     * Get prixTotal
+     *
+     * @return integer
+     */
+    public function getPrixTotal()
+    {
+        return $this->prixTotal;
+    }
+
+    /**
+     * Set prixTotal
+     *
+     * @param int $prixTotal
+     *
+     * @return Reservation
+     */
+    public function setPrixTotal($prixTotal)
+    {
+        $this->prixTotal = $prixTotal;
+
+        return $this;
+    }
+
 
     /**
      * Set date

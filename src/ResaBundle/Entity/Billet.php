@@ -76,23 +76,9 @@ class Billet
     /**
      * @var string
      *
-     * @ORM\Column(name="Tarif", type="string", length=100)
-     */
-    private $tarif;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="Type", type="string", length=100)
      */
     private $type;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="Prix", type="smallint")
-     */
-    private $prix;
 
 
     public function getReservation(){
@@ -259,29 +245,6 @@ class Billet
 
 
 
-    /**
-     * Set tarif
-     *
-     * @param string $tarif
-     *
-     * @return Billet
-     */
-    public function setTarif($tarif)
-    {
-        $this->tarif = $tarif;
-
-        return $this;
-    }
-
-    /**
-     * Get tarif
-     *
-     * @return string
-     */
-    public function getTarif()
-    {
-        return $this->tarif;
-    }
 
     /**
      * Set type
@@ -307,27 +270,5 @@ class Billet
         return $this->type;
     }
 
-    /**
-     * Set prix
-     *
-     * @param integer $prix
-     *
-     * @return Billet
-     */
-    public function setPrix($prix)
-    {
-        $this->prix = $prix;
 
-        return $this;
-    }
-
-    /**
-     * Get prix
-     *
-     * @return integer
-     */
-    public function getPrix()
-    {
-        return $this->prix;
-    }
 }

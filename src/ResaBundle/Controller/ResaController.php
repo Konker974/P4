@@ -34,6 +34,7 @@ class ResaController extends Controller
 
             foreach ($billets as $billet) {
               $billet->setReservation($reservation);
+              dump($billet);
             }
 
 
