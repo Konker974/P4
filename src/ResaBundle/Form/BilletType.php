@@ -21,11 +21,12 @@ class BilletType extends AbstractType
     {
         $builder->add('nom')
         ->add('prenom')
-        ->add('dateNaissance', DateType::class, array('years'=>range(date('1930'), date('Y'))))
+        ->add('dateNaissance', DateType::class, array('widget' => 'single_text', 'input'=>'string'))
         ->add('pays', CountryType::class)
         ->add('dateVisite', DateType::class, array('widget' => 'single_text', 'input'=>'string'))
         ->add('numSerie' , TextType::class, array('data'=>date('U')))
-        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>'Journee', 'Demi-journee'=>'Demi-journee')));
+        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>'Journee', 'Demi-journee'=>'Demi-journee')))
+        ->add('prixBillet', HiddenType::class, array('mapped'=>false));
     }
 
     /**

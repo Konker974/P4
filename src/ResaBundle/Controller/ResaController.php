@@ -35,6 +35,10 @@ class ResaController extends Controller
 
             foreach ($billets as $billet) {
               $billet->setReservation($reservation);
+              $date_format=new \DateTime($billet->getDateNaissance());
+              $billet->setDateNaissance($date_format);
+              $date_format=new \DateTime($billet->getDateVisite());
+              $billet->setDateVisite($date_format);
             }
 
 
@@ -55,9 +59,20 @@ class ResaController extends Controller
 
     public function scriptAction()
     {
-      $response=new Response();
-      $response->setContent($_GET["age"]);
+      if (isset($_GET["dateVisite"]) && isset($_GET["dateNaissance"])) {
 
-       return $response;
+        if ($_GET["dateVisite"]!=NULL && $_GET["dateNaissance"]) {
+
+          $response=new Response();
+          return $response->setContent($_GET["dateVisite"]);
+        }
+      }
+
+      else {
+        $response=new Response();
+        return $response->setContent("nop");
+      }
+
+
     }
 }
