@@ -30,11 +30,11 @@ class ResaController extends Controller
             // On enregistre notre objet $advert dans la base de données, par exemple
             $reservation->setDate(new \DateTime());
             $reservation->setIsPaid(false);
+            $reservation->setNumSerieResa(date('U'));
             $billets=$reservation->getBillets();
 
             foreach ($billets as $billet) {
               $billet->setReservation($reservation);
-              dump($billet);
             }
 
 
@@ -42,13 +42,22 @@ class ResaController extends Controller
             $em->persist($reservation);
             $em->flush();
 
+            $request->getSession()->set('command_id', $reservation->getId());
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
 
             // On redirige vers la page de visualisation de l'annonce nouvellement créée
-            //return $this->redirectToRoute('resa_commandpage', array('id' => $reservation->getId()));
+            return $this->redirectToRoute('resa_commandpage');
           }
         }
 
         return $this->render('ResaBundle:Default:form.html.twig',array('form'=>$form->createView()));
+    }
+
+    public function scriptAction()
+    {
+      $response=new Response();
+      $response->setContent($_GET["age"]);
+
+       return $response;
     }
 }

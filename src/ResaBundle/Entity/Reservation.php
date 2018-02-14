@@ -57,6 +57,14 @@ class Reservation
     private $prixTotal;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="NumSerieResa", type="string", length=255, unique=true)
+     */
+    private $numSerieResaResa;
+
+
+    /**
     * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation", cascade={"persist"})
     */
     private $billets;
@@ -237,4 +245,29 @@ class Reservation
     {
         return $this->billets;
     }
+
+    /**
+     * Set numSerieResa
+     *
+     * @param string $numSerieResa
+     *
+     * @return Reservation
+     */
+    public function setNumSerieResa($numSerieResaResa)
+    {
+        $this->numSerieResaResa = $numSerieResaResa;
+
+        return $this;
+    }
+
+    /**
+     * Get numSerieResa
+     *
+     * @return string
+     */
+    public function getNumSerieResa()
+    {
+        return $this->numSerieResa;
+    }
+
 }

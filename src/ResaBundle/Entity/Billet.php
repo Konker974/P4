@@ -60,7 +60,7 @@ class Billet
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="DateVisite", type="datetime")
+     * @ORM\Column(name="DateVisite", type="date")
      * @Assert\GreaterThanOrEqual("today")
      */
     private $dateVisite;
