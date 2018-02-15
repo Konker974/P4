@@ -10,4 +10,4 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: af0069a2c2a1ea69ad30b3f732aa5e9bce8da72a
-    tarifs: { normal: 16, enfant: 8, senior: 12, reduit: 10 }
+    tarif_normal: { normal: 16, enfant: 8, senior: 12, reduit: 10, gratuit: 0 }

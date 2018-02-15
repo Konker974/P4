@@ -80,6 +80,13 @@ class Billet
      */
     private $type;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="Reduction", type="boolean", nullable=true)
+     */
+    private $reduction;
+
 
     public function getReservation(){
       return $this->reservation;
@@ -88,6 +95,32 @@ class Billet
       $this->reservation=$reservation;
       return $this;
     }
+
+    /**
+     * Get reduction
+     *
+     * @return boolean
+     */
+    public function getReduction()
+    {
+        return $this->reduction;
+    }
+
+    /**
+     * Set isPaid
+     *
+     * @param boolean $isPaid
+     *
+     * @return Billet
+     */
+    public function setReduction($reduction)
+    {
+        $this->reduction = $reduction;
+
+        return $this;
+    }
+
+
 
     /**
      * Get id

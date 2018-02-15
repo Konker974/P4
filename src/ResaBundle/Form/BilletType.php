@@ -11,6 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+
 
 class BilletType extends AbstractType
 {
@@ -26,7 +30,8 @@ class BilletType extends AbstractType
         ->add('dateVisite', DateType::class, array('widget' => 'single_text', 'input'=>'string'))
         ->add('numSerie' , TextType::class, array('data'=>date('U')))
         ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>'Journee', 'Demi-journee'=>'Demi-journee')))
-        ->add('prixBillet', HiddenType::class, array('mapped'=>false));
+        ->add('reduction', CheckboxType::class,array('value' => 0, 'required'=>false))
+        ->add('prixBillet', MoneyType::class, array('mapped'=>false, 'disabled'=>true));
     }
 
     /**

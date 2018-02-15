@@ -10,6 +10,8 @@ use ResaBundle\Entity\Billet;
 use ResaBundle\Form\ReservationType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use ResaBundle\Tarif\Tarif;
+
 
 class ResaController extends Controller
 {
@@ -59,13 +61,29 @@ class ResaController extends Controller
 
     public function scriptAction()
     {
-      if (isset($_GET["dateVisite"]) && isset($_GET["dateNaissance"])) {
+      $response=new Response();
+      if (isset($_GET["dateVisite"]) && isset($_GET["dateNaissance"]) && isset($_GET["id"]) && isset($_GET["reduction"])) {
 
-        if ($_GET["dateVisite"]!=NULL && $_GET["dateNaissance"]) {
+        if ($_GET["dateVisite"]!=NULL && $_GET["dateNaissance"]!=NULL && $_GET["id"]!=NULL && $_GET["reduction"]!=NULL) {
 
-          $response=new Response();
-          return $response->setContent($_GET["dateVisite"]);
+          $reduction=$_GET["reduction"];
+          $selecteur=$_GET["id"];
+          $tarif=$this->container->get('resa.tarif');
+
+          $dateNaissance=new \DateTime($_GET["dateNaissance"]);
+          $dateVisite=new \DateTime($_GET["dateVisite"]);
+
+          $totalBillet=$tarif->applyRate($dateNaissance, $dateVisite, $reduction);
+
+          $retour=array('selecteur'=>$selecteur, 'totalBillet'=>$totalBillet);
+
+
+          return $response->setContent(json_encode($retour));
         }
+        else {
+          return $response->setContent("il manque une date");
+        }
+
       }
 
       else {
