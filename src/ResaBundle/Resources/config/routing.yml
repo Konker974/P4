@@ -13,3 +13,7 @@ resa_commandpage:
 resa_script:
     path: /resa_script
     defaults: { _controller: ResaBundle:Resa:script }
+
+resa_scriptFerie:
+    path: /resa_scriptFerie
+    defaults: { _controller: ResaBundle:Resa:scriptFerie }

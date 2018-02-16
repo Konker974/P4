@@ -5,3 +5,7 @@ services:
     resa.tarif:
         class: ResaBundle\Tarif
         arguments: ['%tarifs%']
+
+    resa.jourFerie:
+        class: ResaBundle\JourFerie
+        arguments:

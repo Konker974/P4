@@ -47,11 +47,13 @@ $(document).ready(function() {
     // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
     index++;
 
-    //testDSL
-    var DSLScript  = document.createElement("script");
-    DSLScript.src  = "../tarif.js";
-    DSLScript.type = "text/javascript";
-    document.body.appendChild(DSLScript);
+    //DSL
+    if (index>1) {
+      var DSLScript  = document.createElement("script");
+      DSLScript.src  = "../tarif.js";
+      DSLScript.type = "text/javascript";
+      document.body.appendChild(DSLScript);
+    }
   }
 
   // La fonction qui ajoute un lien de suppression d'une catégorie

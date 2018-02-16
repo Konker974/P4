@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+  var estFerie=0;
 
   function afficher(reponse) {
     var reponse_obj=JSON.parse(reponse);
@@ -12,6 +13,12 @@ $(document).ready(function() {
     });
     $('#resabundle_reservation_prixTotal').val(prixTotal);
 
+  }
+
+  function testDate(reponse) {
+    var reponse_obj=JSON.parse(reponse);
+
+    estFerie=reponse_obj.estFerie;
   }
 
   $("input[id*='dateNaissance']").on("change",
@@ -29,8 +36,7 @@ $(document).ready(function() {
   });
 
   $("input[id*='reduction']").on("change",
-
-  function() {
+    function() {
     var parent=$(this).parent().parent().parent().parent().attr("id");
     var dateVisite=$("input[id*='"+parent+"_dateVisite']").val()
     var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
@@ -53,9 +59,19 @@ $(document).ready(function() {
       var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
       var reduction=$("input[id*='"+parent+"_reduction']").val();
 
-      if (dateNaissance) {
-        ajaxGet("http://localhost/P4/web/app_dev.php/resa_script?dateVisite="+$(this).val()+"&dateNaissance="+dateNaissance+"&id="+parent+"&reduction="+reduction+"",afficher);
+      ajaxGet("http://localhost/P4/web/app_dev.php/resa_scriptFerie?timestamp="+$(this).val()+"",testDate);
+
+      if (estFerie) {
+        alert("c'est une date ferie");
+        $(this).val(0);
       }
+      else {
+        if (dateNaissance) {
+          ajaxGet("http://localhost/P4/web/app_dev.php/resa_script?dateVisite="+$(this).val()+"&dateNaissance="+dateNaissance+"&id="+parent+"&reduction="+reduction+"",afficher);
+        }
+
+      }
+
 
   });
 

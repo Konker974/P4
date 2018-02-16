@@ -22,7 +22,7 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('email', EmailType::class)
-        ->add('prixTotal', MoneyType::class)
+        ->add('prixTotal', MoneyType::class, array('data'=>'0', 'disabled'=>true))
         ->add('save',      SubmitType::class)
         ->add('billets', CollectionType::class, array('entry_type'=>BilletType::class, 'allow_add'=>true,'allow_delete'=>true));
 

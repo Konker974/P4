@@ -34,6 +34,8 @@ class ResaController extends Controller
             $reservation->setIsPaid(false);
             $reservation->setNumSerieResa(date('U'));
             $billets=$reservation->getBillets();
+            $totalResa=0;
+            $tarif=$this->container->get('resa.tarif');
 
             foreach ($billets as $billet) {
               $billet->setReservation($reservation);
@@ -41,7 +43,10 @@ class ResaController extends Controller
               $billet->setDateNaissance($date_format);
               $date_format=new \DateTime($billet->getDateVisite());
               $billet->setDateVisite($date_format);
+              $totalResa+=$tarif->applyRate($billet->getDateNaissance(), $billet->getDateVisite(), $billet->getReduction());
+
             }
+            $reservation->setPrixTotal($totalResa);
 
 
             $em = $this->getDoctrine()->getManager();
@@ -92,5 +97,27 @@ class ResaController extends Controller
       }
 
 
+    }
+
+    public function scriptFerieAction() {
+
+      $response=new Response();
+      $dateChecker=$this->container->get('resa.jourFerie');
+
+      if (isset($_GET['timestamp'])) {
+        $date_obj=new \DateTime($_GET['timestamp']);
+        $date_obj=$date_obj->getTimestamp();
+        $test_date=$dateChecker->jour_ferie($date_obj);
+
+
+        $retour=array('estFerie'=>$test_date);
+
+        return $response->setContent(json_encode($retour));
+
+      }
+
+      else {
+        return $response->setContent("manque parametre");
+      }
     }
 }

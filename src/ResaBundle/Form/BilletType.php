@@ -31,7 +31,7 @@ class BilletType extends AbstractType
         ->add('numSerie' , TextType::class, array('data'=>date('U')))
         ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>'Journee', 'Demi-journee'=>'Demi-journee')))
         ->add('reduction', CheckboxType::class,array('value' => 0, 'required'=>false))
-        ->add('prixBillet', MoneyType::class, array('mapped'=>false, 'disabled'=>true));
+        ->add('prixBillet', MoneyType::class, array('mapped'=>false, 'disabled'=>true, 'data'=>0));
     }
 
     /**

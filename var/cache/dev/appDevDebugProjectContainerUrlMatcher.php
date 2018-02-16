@@ -112,15 +112,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'ResaBundle\\Controller\\DefaultController::indexAction',  '_route' => 'resa_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/resa')) {
-            // resa_formpage
-            if ('/resa' === $pathinfo) {
-                return array (  '_controller' => 'ResaBundle\\Controller\\ResaController::formAction',  '_route' => 'resa_formpage',);
-            }
+        // resa_formpage
+        if ('/resa' === $pathinfo) {
+            return array (  '_controller' => 'ResaBundle\\Controller\\ResaController::formAction',  '_route' => 'resa_formpage',);
+        }
 
+        if (0 === strpos($pathinfo, '/resa_script')) {
             // resa_script
             if ('/resa_script' === $pathinfo) {
                 return array (  '_controller' => 'ResaBundle\\Controller\\ResaController::scriptAction',  '_route' => 'resa_script',);
+            }
+
+            // resa_scriptFerie
+            if ('/resa_scriptFerie' === $pathinfo) {
+                return array (  '_controller' => 'ResaBundle\\Controller\\ResaController::scriptFerieAction',  '_route' => 'resa_scriptFerie',);
             }
 
         }
