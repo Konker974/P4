@@ -17,6 +17,4 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
-
-    #ajouté pour prendre en compte lors de la mise en production
-    tarifs: { normal: 16, enfant: 8, senior: 12, reduit: 10 }
+    tarifs: { normal: 16, enfant: 8, senior: 12, reduit: 10, gratuit: 0 }

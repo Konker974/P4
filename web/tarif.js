@@ -5,15 +5,20 @@ $(document).ready(function() {
   function afficher(reponse) {
     var reponse_obj=JSON.parse(reponse);
     $("input[id*='"+reponse_obj.selecteur+"_prixBillet']").attr("value",reponse_obj.totalBillet);
+
+    var prixTotal=0;
+    $("input[id*='_prixBillet']").each(function(){
+      prixTotal+=parseInt($(this).val());
+    });
+    $('#resabundle_reservation_prixTotal').val(prixTotal);
+
   }
 
   $("input[id*='dateNaissance']").on("change",
 
     function() {
       var parent=$(this).parent().parent().attr("id");
-      console.log(parent);
       var dateVisite=$("input[id*='"+parent+"_dateVisite']").val();
-      console.log(dateVisite);
       var reduction=$("input[id*='"+parent+"_reduction']").val();
 
       if (dateVisite) {
@@ -27,11 +32,8 @@ $(document).ready(function() {
 
   function() {
     var parent=$(this).parent().parent().parent().parent().attr("id");
-    console.log(parent);
     var dateVisite=$("input[id*='"+parent+"_dateVisite']").val()
-    console.log(dateVisite);
     var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
-    console.log(dateNaissance);
     if ($(this).is(':checked')) {
       $(this).val(1);
     }
@@ -48,9 +50,7 @@ $(document).ready(function() {
 
     function() {
       var parent=$(this).parent().parent().attr("id");
-      console.log(parent);
       var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
-      console.log(dateNaissance);
       var reduction=$("input[id*='"+parent+"_reduction']").val();
 
       if (dateNaissance) {
@@ -58,4 +58,6 @@ $(document).ready(function() {
       }
 
   });
+
+
 });
