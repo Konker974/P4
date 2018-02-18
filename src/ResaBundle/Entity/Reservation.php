@@ -61,7 +61,7 @@ class Reservation
      *
      * @ORM\Column(name="NumSerieResa", type="string", length=255, unique=true)
      */
-    private $numSerieResaResa;
+    private $numSerieResa;
 
 
     /**
@@ -253,9 +253,9 @@ class Reservation
      *
      * @return Reservation
      */
-    public function setNumSerieResa($numSerieResaResa)
+    public function setNumSerieResa($numSerieResa)
     {
-        $this->numSerieResaResa = $numSerieResaResa;
+        $this->numSerieResa = $numSerieResa;
 
         return $this;
     }

@@ -17,3 +17,7 @@ resa_script:
 resa_scriptFerie:
     path: /resa_scriptFerie
     defaults: { _controller: ResaBundle:Resa:scriptFerie }
+
+resa_payment:
+    path: /payment
+    defaults: { _controller: ResaBundle:Payment:payment}
