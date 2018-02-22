@@ -68,12 +68,14 @@ class JourFerie
     // Samedis et dimanches
     $jour_sem = jddayofweek(unixtojd($timestamp));
     if($jour_sem == 0 || $jour_sem == 2) $EstFerie = 1;
-    // ces deux lignes au dessus sont à retirer si vous ne désirez pas faire
-    // apparaitre les
-    // samedis et dimanches comme fériés.
+
 
     //on ajoute ici le test pour connaitre si la date de visite est dépassée ou pas
-    if ($timestamp<time()) {
+    $hier=strtotime("-1 days");
+    if ($timestamp==time()) {
+      $EstFerie = '';
+    }
+    if ($timestamp<$hier) {
       $EstFerie = 1;
     }
 

@@ -55,7 +55,17 @@ $(document).ready(function() {
   $("input[id*='dateVisite']").on("change",
 
     function() {
+      var aujourdhui = new Date();
+      var dvisite=new Date($(this).val());
       var parent=$(this).parent().parent().attr("id");
+      if (aujourdhui.getDate()==dvisite.getDate()&&aujourdhui.getMonth()==dvisite.getMonth()&&aujourdhui.getFullYear()==dvisite.getFullYear()) {
+        if (aujourdhui.getHours()>=14) {
+          $('select[id*='+parent+'_type').html("<option value='2'>Demi-Journee</option>");
+        }
+      }
+      else {
+        $('select[id*='+parent+'_type').html('<option value="1">Journee</option><option value="2">Demi-journee</option>');
+      }
       var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
       var reduction=$("input[id*='"+parent+"_reduction']").val();
 
