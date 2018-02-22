@@ -4,13 +4,9 @@
     background-color:#343A40;
 }
 
-a {
-  color: white;
-}
 
 a:hover{
   text-decoration: none;
-  color: white;
 }
 
 a:visited{

@@ -31,7 +31,7 @@
             <header>
               <div class="row bandeau">
                 <div class="col text-center">
-                  <h1 class="display-1">Votre commande</h1>
+                  <h1 class="display-1">Paiement</h1>
                 </div>
               </div>
             </header>
@@ -39,31 +39,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-              {% for message in app.session.flashbag.get('notice') %}
-              {{message}}{% endfor %}
-              <div class="row">
-                <div class="col">
-                  Récapitulatif de commande <br>
-                  {{reservation.numSerieResa}}<br>
-                  {{reservation.email}}<br>
-                </div>
-              </div>
-              <div class="row">
-                  {% for billet in reservation.billets %}
-                  <div class="col">
-                    {{billet.nom}}<br>
-                    {{billet.prenom}}<br>
-                    {{billet.dateVisite}}<br>
-                    {{billet.type}}<br>
-                    {{billet.numSerie}}<br>
-                  </div>
-                  {% endfor %}
-              </div>
+              on fera appel à stripe
             </div>
-          </div>
-          <div class="row">
-            <a href="{{path('resa_payment')}}" id="payment_action" class="btn btn-default">Passer au paiement</a>
-          </div>
         </div>
 
         <footer>

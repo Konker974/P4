@@ -53,7 +53,7 @@ class ResaController extends Controller
             $em->persist($reservation);
             $em->flush();
 
-            $request->getSession()->set('command_id', $reservation->getId());
+            $request->getSession()->set('command_id', $reservation->getId());//a remplaceer par reservation->getId()
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
 
             // On redirige vers la page de visualisation de l'annonce nouvellement créée
