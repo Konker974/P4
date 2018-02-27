@@ -24,4 +24,25 @@ class CommandeController extends Controller
 
       return $this->render('ResaBundle:Default:commande.html.twig', array('reservation'=>$reservation));
     }
+
+    public function paymentAction()
+    {
+        // Set your secret key: remember to change this to your live secret key in production
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey("sk_test_XT9dGqnKGuhRt4WxaZzNSO0r");
+
+        // Token is created using Checkout or Elements!
+        // Get the payment token ID submitted by the form:
+        $token = $_POST['stripeToken'];
+
+        // Charge the user's card:
+        $charge = \Stripe\Charge::create(array(
+          "amount" => 999,
+          "currency" => "eur",
+          "description" => "Example charge",
+          "source" => $token,
+        ));
+        return $this->render('ResaBundle:Default:payment.html.twig');
+
+    }
 }

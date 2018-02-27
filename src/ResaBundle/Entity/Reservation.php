@@ -58,6 +58,7 @@ class Reservation
      * @var int
      *
      * @ORM\Column(name="PrixTotal", type="integer")
+     * @Assert\Type("int")
      */
     private $prixTotal;
 
@@ -71,7 +72,8 @@ class Reservation
 
 
     /**
-    * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation", cascade={"persist"})
+    * @ORM\OneToMany(targetEntity="ResaBundle\Entity\Billet", mappedBy="reservation", cascade={"persist", "remove"})
+    * @Assert\Valid()
     */
     private $billets;
 

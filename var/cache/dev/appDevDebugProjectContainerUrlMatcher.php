@@ -137,7 +137,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // resa_payment
         if ('/payment' === $pathinfo) {
-            return array (  '_controller' => 'ResaBundle\\Controller\\PaymentController::paymentAction',  '_route' => 'resa_payment',);
+            return array (  '_controller' => 'ResaBundle\\Controller\\CommandeController::paymentAction',  '_route' => 'resa_payment',);
         }
 
         // homepage

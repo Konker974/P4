@@ -11,7 +11,7 @@ class Tarif
     $this->tarifs= $tarifs;
   }
 
-  public function applyRate(\DateTime $dateNaissance, \DateTime $dateVisite, $reduit)
+  public function applyRate(\DateTime $dateNaissance, \DateTime $dateVisite, $reduit=0)
   {
     $diff=$dateNaissance->diff($dateVisite);
 

@@ -25,11 +25,11 @@ class BilletType extends AbstractType
     {
         $builder->add('nom')
         ->add('prenom')
-        ->add('dateNaissance', DateType::class, array('widget' => 'single_text', 'input'=>'string'))
+        ->add('dateNaissance', DateType::class, array('widget' => 'single_text'))
         ->add('pays', CountryType::class)
-        ->add('dateVisite', DateType::class, array('widget' => 'single_text', 'input'=>'string'))
+        ->add('dateVisite', DateType::class, array('widget' => 'single_text'))
         ->add('numSerie' , TextType::class, array('data'=>date('U')))
-        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>'1', 'Demi-journee'=>'2')))
+        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>TRUE, 'Demi-journee'=>FALSE)))
         ->add('reduction', CheckboxType::class,array('value' => 0, 'required'=>false))
         ->add('prixBillet', MoneyType::class, array('mapped'=>false, 'disabled'=>true, 'data'=>0));
     }

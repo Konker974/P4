@@ -20,4 +20,4 @@ resa_scriptFerie:
 
 resa_payment:
     path: /payment
-    defaults: { _controller: ResaBundle:Payment:payment}
+    defaults: { _controller: ResaBundle:Commande:payment}

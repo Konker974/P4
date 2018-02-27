@@ -59,6 +59,18 @@
                   </div>
                   {% endfor %}
               </div>
+              <form action="{{path('resa_payment')}}" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_GAKyZMRuWz8zY7dCV97828Lt"
+                  data-amount="999"
+                  data-name="Alexandre PIGNOLET"
+                  data-description="Example charge"
+                  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                  data-locale="auto"
+                  data-currency="eur">
+                </script>
+              </form>
             </div>
           </div>
           <div class="row">

@@ -25,23 +25,24 @@ class ResaController extends Controller
           // On fait le lien Requête <-> Formulaire
           // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
           $form->handleRequest($request);
+          $reservation->setDate(new \DateTime());
+
+
+
+
 
           // On vérifie que les valeurs entrées sont correctes
           if ($form->isValid()) {
             // On enregistre notre objet $advert dans la base de données, par exemple
-            $reservation->setDate(new \DateTime());
             $reservation->setIsPaid(false);
             $reservation->setNumSerieResa(date('U'));
-            $billets=$reservation->getBillets();
             $totalResa=0;
             $tarif=$this->container->get('resa.tarif');
+            $billets=$reservation->getBillets();
+
 
             foreach ($billets as $billet) {
               $billet->setReservation($reservation);
-              $date_format=new \DateTime($billet->getDateNaissance());
-              $billet->setDateNaissance($date_format);
-              $date_format=new \DateTime($billet->getDateVisite());
-              $billet->setDateVisite($date_format);
               $totalResa+=$tarif->applyRate($billet->getDateNaissance(), $billet->getDateVisite(), $billet->getReduction());
 
             }
@@ -52,7 +53,7 @@ class ResaController extends Controller
             $em->persist($reservation);
             $em->flush();
 
-            $request->getSession()->set('command_id', $reservation->getId());//a remplaceer par reservation->getId()
+            $request->getSession()->set('command_id', $reservation->getId());
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
 
             // On redirige vers la page de visualisation de l'annonce nouvellement créée

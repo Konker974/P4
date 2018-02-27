@@ -33,6 +33,7 @@ class Billet
      * @var string
      *
      * @ORM\Column(name="Nom", type="string", length=255)
+     * @Assert\Type("string")
      */
     private $nom;
 
@@ -40,6 +41,7 @@ class Billet
      * @var string
      *
      * @ORM\Column(name="Prenom", type="string", length=255)
+     * @Assert\Type("string")
      */
     private $prenom;
 
@@ -47,6 +49,7 @@ class Billet
      * @var \DateTime
      *
      * @ORM\Column(name="DateNaissance", type="date")
+     * @Assert\DateTime()
      */
     private $dateNaissance;
 
@@ -61,6 +64,7 @@ class Billet
      * @var \DateTime
      *
      * @ORM\Column(name="DateVisite", type="date")
+     * @Assert\DateTime()
      */
     private $dateVisite;
 
@@ -68,14 +72,16 @@ class Billet
      * @var string
      *
      * @ORM\Column(name="NumSerie", type="string", length=255, unique=true)
+     * @Assert\Type("string")
      */
     private $numSerie;
 
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="Type", type="string", length=100)
+     * @ORM\Column(name="Type", type="boolean", length=100)
+     * @Assert\Type("bool")
      */
     private $type;
 

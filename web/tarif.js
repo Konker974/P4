@@ -60,7 +60,7 @@ $(document).ready(function() {
       var parent=$(this).parent().parent().attr("id");
       if (aujourdhui.getDate()==dvisite.getDate()&&aujourdhui.getMonth()==dvisite.getMonth()&&aujourdhui.getFullYear()==dvisite.getFullYear()) {
         if (aujourdhui.getHours()>=14) {
-          $('select[id*='+parent+'_type').html("<option value='2'>Demi-Journee</option>");
+          $('select[id*='+parent+'_type').html("<option value='0'>Demi-Journee</option>");
         }
       }
       else {
