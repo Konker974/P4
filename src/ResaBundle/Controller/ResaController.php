@@ -27,7 +27,6 @@ class ResaController extends Controller
           $form->handleRequest($request);
 
           // On vérifie que les valeurs entrées sont correctes
-          // (Nous verrons la validation des objets en détail dans le prochain chapitre)
           if ($form->isValid()) {
             // On enregistre notre objet $advert dans la base de données, par exemple
             $reservation->setDate(new \DateTime());

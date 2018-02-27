@@ -3,6 +3,7 @@
 namespace ResaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reservation
@@ -25,6 +26,7 @@ class Reservation
      * @var \DateTime
      *
      * @ORM\Column(name="Date", type="datetime")
+     * @Assert\DateTime()
      */
     private $date;
 
@@ -32,6 +34,7 @@ class Reservation
      * @var string
      *
      * @ORM\Column(name="Email", type="string", length=255)
+     * @Assert\Email
      */
     private $email;
 
@@ -39,6 +42,7 @@ class Reservation
      * @var \DateTime
      *
      * @ORM\Column(name="LastModif", type="datetime", nullable=true)
+     * @Assert\DateTime()
      */
     private $lastModif;
 
@@ -46,6 +50,7 @@ class Reservation
      * @var bool
      *
      * @ORM\Column(name="IsPaid", type="boolean")
+     * @Assert\Type("bool")
      */
     private $isPaid;
 
@@ -60,6 +65,7 @@ class Reservation
      * @var string
      *
      * @ORM\Column(name="NumSerieResa", type="string", length=255, unique=true)
+     * @Assert\Type("string")
      */
     private $numSerieResa;
 
