@@ -59,29 +59,34 @@
                     reduction: {{billet.reduction}}<br>
                   {% endfor %}
                   prix total: {{reservation.prixTotal}}
+                  {% set prixConverti = reservation.prixTotal %}
                 </div>
               </div>
+
+
               <form action="{{path('resa_payment')}}" method="POST">
                 <script
                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="pk_test_GAKyZMRuWz8zY7dCV97828Lt"
-                  data-amount="999"
-                  data-name="Alexandre PIGNOLET"
-                  data-description="Example charge"
+                  data-amount="{{prixConverti * 100}}"
+                  data-name="Musée du Louvre"
+                  data-description="Achat de bilelts"
                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                   data-locale="auto"
-                  data-currency="eur">
+                  data-currency="eur"
+                  data-email= "{{reservation.email}}">
                 </script>
               </form>
+
+
+
             </div>
-          </div>
-          <div class="row">
-            <a href="{{path('resa_payment')}}" id="payment_action" class="btn btn-default">Passer au paiement</a>
           </div>
         </div>
 
         <footer>
 
       </footer>
+
     </body>
 </html>

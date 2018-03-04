@@ -26,12 +26,6 @@ class ResaController extends Controller
           $form->handleRequest($request);
           $reservation->setDate(new \DateTime());
           $billets=$reservation->getBillets();
-          foreach ($billets as $billet) {
-            $bool=(bool)$billet->getType();
-            $billet->setType($bool);
-            var_dump($billet->getType());
-
-          }
 
 
 
