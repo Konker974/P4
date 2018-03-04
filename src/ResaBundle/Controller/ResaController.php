@@ -23,10 +23,15 @@ class ResaController extends Controller
 
         if ($request->isMethod('POST')) {
           // On fait le lien Requête <-> Formulaire
-          // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
           $form->handleRequest($request);
           $reservation->setDate(new \DateTime());
+          $billets=$reservation->getBillets();
+          foreach ($billets as $billet) {
+            $bool=(bool)$billet->getType();
+            $billet->setType($bool);
+            var_dump($billet->getType());
 
+          }
 
 
 
@@ -38,7 +43,6 @@ class ResaController extends Controller
             $reservation->setNumSerieResa(date('U'));
             $totalResa=0;
             $tarif=$this->container->get('resa.tarif');
-            $billets=$reservation->getBillets();
 
 
             foreach ($billets as $billet) {

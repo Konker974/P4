@@ -64,7 +64,7 @@ $(document).ready(function() {
         }
       }
       else {
-        $('select[id*='+parent+'_type').html('<option value="1">Journee</option><option value="2">Demi-journee</option>');
+        $('select[id*='+parent+'_type').html('<option value="1">Journee</option><option value="0">Demi-journee</option>');
       }
       var dateNaissance=$("input[id*='"+parent+"_dateNaissance']").val()
       var reduction=$("input[id*='"+parent+"_reduction']").val();

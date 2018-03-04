@@ -29,7 +29,7 @@ class BilletType extends AbstractType
         ->add('pays', CountryType::class)
         ->add('dateVisite', DateType::class, array('widget' => 'single_text'))
         ->add('numSerie' , TextType::class, array('data'=>date('U')))
-        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>TRUE, 'Demi-journee'=>FALSE)))
+        ->add('type', ChoiceType::class, array('choices'=>array('Journee'=>1, 'Demi-journee'=>0)))
         ->add('reduction', CheckboxType::class,array('value' => 0, 'required'=>false))
         ->add('prixBillet', MoneyType::class, array('mapped'=>false, 'disabled'=>true, 'data'=>0));
     }

@@ -56,8 +56,10 @@
                     {{billet.dateVisite}}<br>
                     {{billet.type}}<br>
                     {{billet.numSerie}}<br>
-                  </div>
+                    reduction: {{billet.reduction}}<br>
                   {% endfor %}
+                  prix total: {{reservation.prixTotal}}
+                </div>
               </div>
               <form action="{{path('resa_payment')}}" method="POST">
                 <script

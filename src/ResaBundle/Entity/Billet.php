@@ -78,10 +78,10 @@ class Billet
 
 
     /**
-     * @var bool
+     * @var int
      *
      * @ORM\Column(name="Type", type="boolean", length=100)
-     * @Assert\Type("bool")
+     * @Assert\Type("int")
      */
     private $type;
 
@@ -89,6 +89,8 @@ class Billet
      * @var bool
      *
      * @ORM\Column(name="Reduction", type="boolean", nullable=true)
+     * @Assert\Type("bool")
+k
      */
     private $reduction;
 
@@ -287,7 +289,7 @@ class Billet
     /**
      * Set type
      *
-     * @param string $type
+     * @param bool $type
      *
      * @return Billet
      */
@@ -301,7 +303,7 @@ class Billet
     /**
      * Get type
      *
-     * @return string
+     * @return bool
      */
     public function getType()
     {
